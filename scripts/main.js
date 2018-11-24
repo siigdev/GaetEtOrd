@@ -79,7 +79,14 @@ function startGame(teamNames, teamColors) {
             var startWidth = 0;
             var timeInMs = 50; //Set time in ms
             var id = setInterval(frame, timeInMs);
+            var counter = 0;
             function frame() {
+                counter++;
+                console.log("counter" + counter + "time" + timeInMs);
+                if (counter > timeInMs*3-70){ 
+                    console.log("now");
+                    $('#timeBar').css("background-color", "#c6262e");
+                }
                 if (startWidth >= 100) {
                     clearInterval(id);
                     $('#timer').html("Tiden er gåæt! Hold nummer x kan nu forsøge at gætte et ord");
