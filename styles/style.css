@@ -26,6 +26,7 @@ html, body {
 	font-family: 'Raleway';
 	transition: transform .2s;
 	pointer-events: none;
+	border-radius: .25rem;
 }
 .card {
 	background-color: #444 !important;
@@ -41,6 +42,16 @@ html, body {
 	font-family: 'Raleway';
 	cursor: pointer;
 	transition: transform .2s;
+}
+.pickedCard {
+	background-color: rgb(207, 206, 206) !important;
+	color: #444;
+	margin: 50px 10px 50px 10px;
+	height: 250px;
+	width: 170px;
+	padding: 5px;
+	font-family: 'Raleway';
+	border-radius: .25rem;
 }
 .card:hover {
 	transform: scale(1.02);
@@ -59,18 +70,23 @@ html, body {
 	text-transform: uppercase;
 	margin-bottom: -10px;
 }
+#ord {
+	color: white;
+	font-size: 15px;
+	font-weight: 500px;
+}
 #infobox {
 	text-align: center;
 	font-size: 40px;
 	text-transform: uppercase;
 	font-weight: 500;
 }
-input {
-	width: 100%;
-}
 #thingsTodo {
 	margin: auto;
 	width: 135px;
+}
+input {
+	width: 100%;
 }
 #startTime, #pointBtn {
 	margin: auto;

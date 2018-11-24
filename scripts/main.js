@@ -66,12 +66,12 @@ function startGame(teamNames, teamColors) {
     function clickCard(myCardIndex){ 
         var myCard = cardsArray[myCardIndex];
         $("#cards div").addClass("disabledCards");
-        $('#thingsToDo').html('');
+        $('#thingsToDo').html("<div class='pickedCard'></div>");
         $('#startTime').prop('disabled', false);
         $('#infobox').text("Du har valgt at " + myCard.method + " " + myCard.category);
         for(var i = 0; i < myCard.content.length; i++)
             {
-                $('#thingsToDo').append(myCard.content[i] + "<br>");
+                $('#thingsToDo div').append("<p id='ord'>" + myCard.content[i] + "</p>");
             }
 
         //Onclick-function on Start Time-button to add a countdown timer.
@@ -102,14 +102,14 @@ function startGame(teamNames, teamColors) {
     //Calculate the points after each round
     function calcPoints() {
         $('#infobox').text("Vælg hvor mange ord der blev gættet rigtigt...");
-        $('#timer').append("<br>Hvor mange ord gættede I rigtigt? " + "<select id='numberOfPointsOne'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
+        $('#pointContainer').append("<br>Hvor mange ord gættede I rigtigt? " + "<select id='numberOfPointsOne'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
         //$('#timer').append("Hvor mange ord gættede modstanderen rigtigt? " + "<select id='numberOfPointsLast'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>");
-        $('#timer').append("<button type='submit' id='pointBtn' class='btn btn-default btn-success btn-block'>Videre..</button>")
+        $('#pointContainer').append("<button type='submit' id='pointBtn' class='btn btn-default btn-success btn-block'>Videre..</button>")
         $('#pointBtn').unbind('click').click(function(){
             numberOfPointsFirst = $("#numberOfPointsOne option:selected").val();
             currentTeam.points = currentTeam.points + + $("#numberOfPointsOne option:selected").val();
             //numberOfPointsSecond = $("#numberOfPointsLast option:selected").text();
-            $('#timer').text('')
+            $('#pointContainer').html("");
             changeTeam();
             addCardToBoard();
         });
