@@ -1,0 +1,65 @@
+
+<HTML>
+    <head>
+        <title>GAET ET ORD Browser Version 0.1</title>
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        
+        <!--jQuery/bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+        <!--Main Javascript-->
+        <script src="main.js"></script>
+
+    </head>
+<body>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+            <div class="modal-body">Vaelg antal hold:<br>
+                <select id="numberOfTeamsSelected">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                    <button type="submit" id="numberOfTeamsBtn" class="btn btn-default btn-success btn-block" >Videre</button>
+            </div>
+            </div>
+        </div>
+    </div> 
+    <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                <div class="modal-body" id="teamSettingsModal">Vaelg oenskede indstillinger:<br>
+                    
+                </div>
+                <div class="modal-footer">
+                        <button type="submit" id="teamSettingsBtn"class="btn btn-default btn-success btn-block">Start Spillet</button>
+                </div>
+                </div>
+            </div>
+        </div> 
+    <div id="resultbox"></div>
+    <div id="turnbox"></div>
+    <div id="infobox"></div>
+    <div id="cards">
+        <div id="card0"></div>
+        <div id="card1"></div>
+        <div id="card2"></div>
+        <div id="card3"></div>
+        <div id="card4"></div>
+    </div>
+    <div id="thingsToDo"></div><div id="timer"></div><button type="submit" id="startTime" class="btn btn-default btn-success btn-block" disabled>Er du klar? Start Tiden!</button></div>
+    <div id="board">Board here <i class="fab fa-accessible-icon"></i></div>
+</body>
+</HTML>

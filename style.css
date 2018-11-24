@@ -1,0 +1,85 @@
+html, body {
+	height:100%;
+	width:100%;
+	border:0px;
+	margin:0;
+	padding:0;
+	background-color: #ededed !important;
+	font-family: 'Raleway';
+}
+#cards {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+.undefinedCards {
+	background-color: #444 !important;
+	margin: 50px 10px 50px 10px;
+	height: 250px;
+	width: 170px;
+	padding: 5px;
+	float: left;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	text-align: right;
+	font-family: 'Raleway';
+	transition: transform .2s;
+	pointer-events: none;
+}
+.card {
+	background-color: #444 !important;
+	margin: 50px 10px 50px 10px;
+	height: 250px;
+	width: 170px;
+	padding: 5px;
+	float: left;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	text-align: right;
+	font-family: 'Raleway';
+	cursor: pointer;
+	transition: transform .2s;
+}
+.card:hover {
+	transform: scale(1.02);
+}
+#category {
+	color: #7dbfe3;
+	font-size: 17px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: -15px;
+}
+#method {
+	color: white;
+	font-size: 40px;
+	font-weight: 900;
+	text-transform: uppercase;
+	margin-bottom: -10px;
+}
+#infobox {
+	text-align: center;
+	font-size: 40px;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+input {
+	width: 100%;
+}
+#thingsTodo {
+	margin: auto;
+	width: 135px;
+}
+#startTime, #pointBtn {
+	margin: auto;
+	width: 225px;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.disabledCards {
+	pointer-events: none;
+}
