@@ -83,7 +83,7 @@ function startGame(teamNames, teamColors) {
                 //Ask for both teams points when the time is over
                 if (counter == 0) {
                     clearInterval(interval);
-                    $('#timer').text("Tiden er gaaet! Hold nummer x kan nu forsoege at gaette et ord");
+                    $('#timer').text("Tiden er gæt! Hold nummer x kan nu forsøge at gætte et ord");
                     calcPoints();
                     $('#startTime').prop('disabled', true);
                 }
@@ -98,9 +98,9 @@ function startGame(teamNames, teamColors) {
     }
     //Calculate the points after each round
     function calcPoints() {
-        $('#infobox').text("Vaelg hvor mange ord der blev gaettet rigtigt...");
-        $('#timer').append("<br>Hvor mange ord gaettede I rigtigt? " + "<select id='numberOfPointsOne'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
-        //$('#timer').append("Hvor mange ord gaettede modstanderen rigtigt? " + "<select id='numberOfPointsLast'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>");
+        $('#infobox').text("Vælg hvor mange ord der blev gættet rigtigt...");
+        $('#timer').append("<br>Hvor mange ord gættede I rigtigt? " + "<select id='numberOfPointsOne'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
+        //$('#timer').append("Hvor mange ord gættede modstanderen rigtigt? " + "<select id='numberOfPointsLast'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>");
         $('#timer').append("<button type='submit' id='pointBtn' class='btn btn-default btn-success btn-block'>Videre..</button>")
         $('#pointBtn').unbind('click').click(function(){
             numberOfPointsFirst = $("#numberOfPointsOne option:selected").val();
@@ -118,7 +118,7 @@ function startGame(teamNames, teamColors) {
             $('#resultbox').append('Hold ' + teams[i].name + ' med  ' + teams[i].points + ' Points<br>');
         }
         $('#turnbox').text("Det er nu hold " + this.currentTeam.name + " ");
-        $('#infobox').text("Vaelg et af nedenstaaende kort: ");
+        $('#infobox').text("Vælg et af nedenstaænde kort: ");
     }
 }
 
@@ -179,30 +179,30 @@ class Deck {
         this.deck = [];
         this.deck.push(new Card(0, 'Tale', 'Sommer', ['Tale', 'Sommer', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(1, 'Mime', 'Vinter', ['Mime', 'Vinter', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(2, 'Lyde', 'Foraar', ['Lyde', 'Foraar', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(3, 'Tegne', 'Efteraar', ['Tegne', 'Efteraar', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(4, 'Tegne', 'Paaske', ['Tegne', 'Paaske', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(2, 'Lyde', 'Forår', ['Lyde', 'Forår', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(3, 'Tegne', 'Efterår', ['Tegne', 'Efterår', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(4, 'Tegne', 'Påske', ['Tegne', 'Påske', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(5, 'Lyde', 'Jul', ['Lyde', 'Jul', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(6, 'Mime', 'Ferie', ['Mime', 'Ferie', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(7, 'Tale', 'Sommer', ['Tale', 'Sommer', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(8, 'Mime', 'Vinter', ['Mime', 'Vinter', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(9, 'Lyde', 'Foraar', ['Lyde', 'Foraar', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(10, 'Tegne', 'Efteraar', ['Tegne', 'Efteraar', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(11, 'Tegne', 'Paaske', ['Tegne', 'Paaske', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(9, 'Lyde', 'Forår', ['Lyde', 'Forår', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(10, 'Tegne', 'Efterår', ['Tegne', 'Efterår', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(11, 'Tegne', 'Påske', ['Tegne', 'Påske', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(12, 'Lyde', 'Jul', ['Lyde', 'Jul', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(13, 'Mime', 'Ferie', ['Mime', 'Ferie', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(14, 'Tale', 'Sommer', ['Tale', 'Sommer', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(15, 'Mime', 'Vinter', ['Mime', 'Vinter', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(16, 'Lyde', 'Foraar', ['Lyde', 'Foraar', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(17, 'Tegne', 'Efteraar', ['Tegne', 'Efteraar', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(18, 'Tegne', 'Paaske', ['Tegne', 'Paaske', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(16, 'Lyde', 'Forår', ['Lyde', 'Forår', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(17, 'Tegne', 'Efterår', ['Tegne', 'Efterår', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(18, 'Tegne', 'Påske', ['Tegne', 'Påske', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(19, 'Lyde', 'Jul', ['Lyde', 'Jul', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(20, 'Mime', 'Ferie', ['Mime', 'Ferie', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(21, 'Tale', 'Sommer', ['Tale', 'Sommer', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(22, 'Mime', 'Vinter', ['Mime', 'Vinter', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(23, 'Lyde', 'Foraar', ['Lyde', 'Foraar', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(24, 'Tegne', 'Efteraar', ['Tegne', 'Efteraar', 'Sommer', 'Something', 'Something :)']))
-        this.deck.push(new Card(25, 'Tegne', 'Paaske', ['Tegne', 'Paaske', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(23, 'Lyde', 'Forår', ['Lyde', 'Forår', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(24, 'Tegne', 'Efterår', ['Tegne', 'Efterår', 'Sommer', 'Something', 'Something :)']))
+        this.deck.push(new Card(25, 'Tegne', 'Påske', ['Tegne', 'Påske', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(26, 'Lyde', 'Jul', ['Lyde', 'Jul', 'Sommer', 'Something', 'Something :)']))
         this.deck.push(new Card(27, 'Mime', 'Ferie', ['Mime', 'Ferie', 'Sommer', 'Something', 'Something :)']))
     }
