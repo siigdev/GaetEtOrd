@@ -75,19 +75,22 @@ function startGame(teamNames, teamColors) {
             }
 
         //Onclick-function on Start Time-button to add a countdown timer.
-        $('#startTime').unbind('click').click(function(){
-            var counter = 2; // CHANGE THIS TO WHATEVER TIME NEEDED FOR EACH TURN
-            var interval = setInterval(function() {
-                counter--;
-                $('#timer').text('Tid tilbage: ' + counter);
-                //Ask for both teams points when the time is over
-                if (counter == 0) {
-                    clearInterval(interval);
-                    $('#timer').text("Tiden er gæt! Hold nummer x kan nu forsøge at gætte et ord");
-                    calcPoints();
+        $('#startTime').unbind('click').click(function(){   
+            var startWidth = 0;
+            var timeInMs = 50; //Set time in ms
+            var id = setInterval(frame, timeInMs);
+            function frame() {
+                if (startWidth >= 100) {
+                    clearInterval(id);
+                    $('#timer').html("Tiden er gåæt! Hold nummer x kan nu forsøge at gætte et ord");
                     $('#startTime').prop('disabled', true);
+                    calcPoints();
+                } else {
+                    startWidth++; 
+                $('#timeBar').width(startWidth + '%'); 
                 }
-            }, 1000);
+            }
+            
         });
         if (myCardIndex == 4) {
             cardsArray.pop();

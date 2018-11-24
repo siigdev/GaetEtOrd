@@ -83,3 +83,13 @@ input {
 .disabledCards {
 	pointer-events: none;
 }
+#timeContainer {
+	width: 100%;
+	background-color: #ddd;
+  }
+#timeBar {
+	width: 0%;
+	height: 10px;
+	margin-bottom: 10px;
+	background-color: #4CAF50;
+}
