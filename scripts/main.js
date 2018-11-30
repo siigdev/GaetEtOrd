@@ -65,24 +65,22 @@ function startGame(teamNames, teamColors) {
     //Onclick-function when a card is chosen
     function clickCard(myCardIndex, el){ 
         var myCard = cardsArray[myCardIndex];
+        var offset = $(el).offset();
         $("#cards div").addClass("disabledCards");
-        $('#thingsToDo').html("<div class='pickedCard'></div>");
+        $('body').append("<div class='pickedCard'></div>");
+        $(".pickedCard").offset({ top: offset.top, left: offset.left});
         $('#startTime').prop('disabled', false);
         $('#infobox').text("Du har valgt at " + myCard.method + " " + myCard.category);
         for(var i = 0; i < myCard.content.length; i++)
             {
-                $('#thingsToDo div').append("<p id='ord'>" + myCard.content[i] + "</p>");
+                $('.pickedCard').append("<p id='ord'>" + myCard.content[i] + "</p>");
             }
+
         $(".pickedCard").animate({
             left: $(".pickedCard").parent().width() / 2 - 255 / 2,
             width: '255px',
             height: '375px'
         }, 500);
-
-        // $('.pickedCard').animate({
-        //     width: '255px',
-        //     height: '375px',
-        // })
 
         //Onclick-function on Start Time-button to add a countdown timer.
         $('#startTime').unbind('click').click(function(){   
@@ -125,7 +123,7 @@ function startGame(teamNames, teamColors) {
             currentTeam.points = currentTeam.points + + $("#numberOfPointsOne option:selected").val();
             //numberOfPointsSecond = $("#numberOfPointsLast option:selected").text();
             $('#pointContainer').html("");
-            $('#thingsToDo').html("");
+            $( ".pickedCard" ).remove();
             changeTeam();
             addCardToBoard();
         });
@@ -137,7 +135,7 @@ function startGame(teamNames, teamColors) {
             $('#resultbox').append('Hold ' + teams[i].name + ' med  ' + teams[i].points + ' Points<br>');
         }
         $('#turnbox').text("Det er nu hold " + this.currentTeam.name + " ");
-        $('#infobox').text("Vælg et af nedenstaænde kort: ");
+        $('#infobox').text("Vælg et af nedenstående kort: ");
     }
 }
 
@@ -150,7 +148,6 @@ $(document).ready(function(){
         teamSettings(numberOfTeams);
         
     });
-    
 });
 
 function teamSettings(){
