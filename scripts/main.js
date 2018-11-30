@@ -5,6 +5,7 @@ $(window).on('load',function(){
 
 var turn = -1;
 var cardsArray = [];
+
 //When the game is started
 function startGame(teamNames, teamColors) {
     var teams = [];
@@ -90,6 +91,7 @@ function startGame(teamNames, teamColors) {
             var timeInMs = 50; //Set time in ms
             var id = setInterval(frame, timeInMs);
             var counter = 0;
+            $('#timeBar').css("background-color", "#4CAF50");
             function frame() {
                 counter++;
                 if (counter > timeInMs*3-70){ 
