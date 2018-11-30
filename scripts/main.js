@@ -46,7 +46,7 @@ function startGame(teamNames, teamColors) {
         $(cardHtml).prependTo("#cards").on("click", function() { 
             $(this).text("");
             $(this).removeClass("card").addClass("undefinedCards");
-            clickCard(cardsArray.indexOf(curCard)); 
+            clickCard(cardsArray.indexOf(curCard), this); 
         });   
         if (cardsArray.length > 4){
             if (cardsArray[4] == undefined){
@@ -63,7 +63,7 @@ function startGame(teamNames, teamColors) {
         }
     }
     //Onclick-function when a card is chosen
-    function clickCard(myCardIndex){ 
+    function clickCard(myCardIndex, el){ 
         var myCard = cardsArray[myCardIndex];
         $("#cards div").addClass("disabledCards");
         $('#thingsToDo').html("<div class='pickedCard'></div>");
@@ -74,6 +74,17 @@ function startGame(teamNames, teamColors) {
                 $('#thingsToDo div').append("<p id='ord'>" + myCard.content[i] + "</p>");
             }
 
+        //Animate it
+        var windowWidth = $(window).width();
+        var windowHeight = $(window).height();
+        var cardWidth = $('.pickedCard').offsetWidth;
+        var cardHeight = $('.pickedCard').offsetHeight;
+        $('.pickedCard').css("position", "absolute");
+        $('.pickedCard').animate({
+            width: '255px',
+            height: '375px',
+        })
+
         //Onclick-function on Start Time-button to add a countdown timer.
         $('#startTime').unbind('click').click(function(){   
             var startWidth = 0;
@@ -82,9 +93,7 @@ function startGame(teamNames, teamColors) {
             var counter = 0;
             function frame() {
                 counter++;
-                console.log("counter" + counter + "time" + timeInMs);
                 if (counter > timeInMs*3-70){ 
-                    console.log("now");
                     $('#timeBar').css("background-color", "#c6262e");
                 }
                 if (startWidth >= 100) {
@@ -117,6 +126,7 @@ function startGame(teamNames, teamColors) {
             currentTeam.points = currentTeam.points + + $("#numberOfPointsOne option:selected").val();
             //numberOfPointsSecond = $("#numberOfPointsLast option:selected").text();
             $('#pointContainer').html("");
+            $('#thingsToDo').html("");
             changeTeam();
             addCardToBoard();
         });
