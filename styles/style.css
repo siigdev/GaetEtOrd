@@ -44,9 +44,9 @@ html, body {
 	transition: transform .2s;
 }
 .pickedCard {
+	position: absolute; 
 	background-color: rgb(207, 206, 206) !important;
 	color: #444;
-	margin: 50px 10px 50px 10px;
 	height: 250px;
 	width: 170px;
 	padding: 5px;
@@ -82,8 +82,8 @@ html, body {
 	font-weight: 500;
 }
 #thingsTodo {
-	margin: auto;
-	width: 135px;
+	margin: 0px;
+	width: 100%;
 }
 input {
 	width: 100%;

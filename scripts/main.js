@@ -73,17 +73,16 @@ function startGame(teamNames, teamColors) {
             {
                 $('#thingsToDo div').append("<p id='ord'>" + myCard.content[i] + "</p>");
             }
-
-        //Animate it
-        var windowWidth = $(window).width();
-        var windowHeight = $(window).height();
-        var cardWidth = $('.pickedCard').offsetWidth;
-        var cardHeight = $('.pickedCard').offsetHeight;
-        $('.pickedCard').css("position", "absolute");
-        $('.pickedCard').animate({
+        $(".pickedCard").animate({
+            left: $(".pickedCard").parent().width() / 2 - 255 / 2,
             width: '255px',
-            height: '375px',
-        })
+            height: '375px'
+        }, 500);
+
+        // $('.pickedCard').animate({
+        //     width: '255px',
+        //     height: '375px',
+        // })
 
         //Onclick-function on Start Time-button to add a countdown timer.
         $('#startTime').unbind('click').click(function(){   
