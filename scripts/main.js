@@ -67,7 +67,7 @@ function startGame(teamNames, teamColors) {
         var myCard = cardsArray[myCardIndex];
         var offset = $(el).offset();
         $("#cards div").addClass("disabledCards");
-        $('body').append("<div class='pickedCard'><div class='pickedcard__face pickedcard__face--front'><p id='category'>" + myCard.category + "</p><p id='method'>" + myCard.method + "</p></div><div class='pickedcard__face pickedcard__face--back'>back</div></div>");
+        $('body').append("<div class='pickedCard'><div class='pickedcard__face pickedcard__face--front'><p id='category'>" + myCard.category + "</p><p id='method'>" + myCard.method + "</p></div><div class='pickedcard__face pickedcard__face--back'></div></div>");
         $(".pickedCard").offset({ top: offset.top, left: offset.left});
         $('#startTime').prop('disabled', false);
         $('#infobox').text("Du har valgt at " + myCard.method + " " + myCard.category);
