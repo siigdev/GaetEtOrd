@@ -67,20 +67,22 @@ function startGame(teamNames, teamColors) {
         var myCard = cardsArray[myCardIndex];
         var offset = $(el).offset();
         $("#cards div").addClass("disabledCards");
-        $('body').append("<div class='pickedCard'></div>");
+        $('body').append("<div class='pickedCard'><div class='pickedcard__face pickedcard__face--front'></div><div class='pickedcard__face pickedcard__face--back'>back</div></div>");
         $(".pickedCard").offset({ top: offset.top, left: offset.left});
         $('#startTime').prop('disabled', false);
         $('#infobox').text("Du har valgt at " + myCard.method + " " + myCard.category);
         for(var i = 0; i < myCard.content.length; i++)
             {
-                $('.pickedCard').append("<p id='ord'>" + myCard.content[i] + "</p>");
+                $('.pickedcard__face--back').append("<p id='ord'>" + myCard.content[i] + "</p>");
             }
 
         $(".pickedCard").animate({
             left: $(".pickedCard").parent().width() / 2 - 255 / 2,
             width: '255px',
-            height: '375px'
-        }, 500);
+            height: '375px',
+        }, 500, function() {
+            $(".pickedCard").toggleClass('is-flipped');
+        });
 
         //Onclick-function on Start Time-button to add a countdown timer.
         $('#startTime').unbind('click').click(function(){   
