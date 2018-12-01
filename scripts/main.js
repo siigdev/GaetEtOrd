@@ -44,7 +44,7 @@ function startGame(teamNames, teamColors) {
         cardsArray.unshift(curCard);
         let cardHtml = "<div class='card'><p id='category'>" + curCard.category + "</p><p id='method'>" + curCard.method + "</p></div>";
         $("#cards div").removeClass("disabledCards");
-        $(cardHtml).prependTo("#cards").on("click", function() { 
+        $(cardHtml).prependTo("#cards").one("click", function() { 
             $(this).text("");
             $(this).removeClass("card").addClass("undefinedCards");
             clickCard(cardsArray.indexOf(curCard), this); 
@@ -86,7 +86,7 @@ function startGame(teamNames, teamColors) {
         });
 
         //Onclick-function on Start Time-button to add a countdown timer.
-        $('#startTime').unbind('click').click(function(){   
+        $('#startTime').unbind('click').one('click', function(){   
             var startWidth = 0;
             var timeInMs = 50; //Set time in ms
             var id = setInterval(frame, timeInMs);
