@@ -101,7 +101,7 @@ function startGame(teamNames, teamColors) {
                     clearInterval(id);
                     $('#timer').html("Tiden er gåæt! Hold nummer x kan nu forsøge at gætte et ord");
                     $('#startTime').prop('disabled', true);
-                    calcPoints();
+                    calcPoints(myCardIndex);
                 } else {
                     startWidth++; 
                 $('#timeBar').width(startWidth + '%'); 
@@ -117,14 +117,18 @@ function startGame(teamNames, teamColors) {
         }
     }
     //Calculate the points after each round
-    function calcPoints() {
+    function calcPoints(index) {
+        var extraPoints = 0;
+        if (index == 3 || index == 4){
+            extraPoints = 1;
+        }
         $('#infobox').text("Vælg hvor mange ord der blev gættet rigtigt...");
         $('#pointContainer').append("<br>Hvor mange ord gættede I rigtigt? " + "<select id='numberOfPointsOne'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
         //$('#timer').append("Hvor mange ord gættede modstanderen rigtigt? " + "<select id='numberOfPointsLast'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>");
         $('#pointContainer').append("<button type='submit' id='pointBtn' class='btn btn-default btn-success btn-block'>Videre..</button>")
         $('#pointBtn').unbind('click').click(function(){
             numberOfPointsFirst = $("#numberOfPointsOne option:selected").val();
-            currentTeam.points = currentTeam.points + + $("#numberOfPointsOne option:selected").val();
+            currentTeam.points = currentTeam.points + extraPoints + parseInt($("#numberOfPointsOne option:selected").val());
             //numberOfPointsSecond = $("#numberOfPointsLast option:selected").text();
             $('#pointContainer').html("");
             $( ".pickedCard" ).remove();
