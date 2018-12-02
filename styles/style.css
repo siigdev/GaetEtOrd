@@ -100,6 +100,7 @@ html, body {
 input {
 	width: 100%;
 }
+
 #startTime, #pointBtn {
 	margin: auto;
 	width: 225px;

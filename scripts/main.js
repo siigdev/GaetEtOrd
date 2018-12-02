@@ -102,7 +102,6 @@ function startGame(teamNames, teamColors) {
                 if (startWidth >= 100) {
                     clearInterval(id);
                     $('#timer').html("Tiden er gåæt! Hold nummer x kan nu forsøge at gætte et ord");
-                    $('#startTime').prop('disabled', true);
                     calcPoints(myCardIndex);
                 } else {
                     startWidth++; 
@@ -125,7 +124,7 @@ function startGame(teamNames, teamColors) {
             extraPoints = 1;
         }
         $('#infobox').text("Tiden er gået!");
-        $('#pointContainer').append("<br>Hvor mange ord gættede I rigtigt? " + "<select id='numberOfPointsOne'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
+        $('#pointContainer').append("<br>Hvor mange ord gættede I rigtigt? " + "<select id='numberOfPointsOne' class='form-control col-xs-2'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
         //$('#timer').append("Hvor mange ord gættede modstanderen rigtigt? " + "<select id='numberOfPointsLast'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>");
         $('#pointBtn').show();
         $('#pointBtn').unbind('click').click(function(){
