@@ -92,7 +92,6 @@ input {
 }
 #startTime, #pointBtn {
 	margin: auto;
-	margin-top: 100px;
 	width: 225px;
 }
 /* On mouse-over, add a deeper shadow */
@@ -109,7 +108,7 @@ input {
 #timeBar {
 	width: 0%;
 	height: 10px;
-	margin-bottom: 10px;
+	margin-top: 10px;
 	background-color: #4CAF50;
 }
 .pickedcard__face {
