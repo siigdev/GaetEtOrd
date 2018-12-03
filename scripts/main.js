@@ -70,7 +70,7 @@ function startGame(teamNames, teamColors) {
         $("#cards div").addClass("disabledCards");
         $('body').append("<div class='pickedCard'><div class='pickedcard__face pickedcard__face--front'><p id='category'>" + myCard.category + "</p><p id='method'>" + myCard.method + "</p></div><div class='pickedcard__face pickedcard__face--back'></div></div>");
         $(".pickedCard").offset({ top: offset.top, left: offset.left});
-        $('#startTime').show();
+        $('#startTime').delay(1100).show(0);
         $('#infobox').text("Du har valgt at " + myCard.method + " " + myCard.category);
         for(var i = 0; i < myCard.content.length; i++)
             {
