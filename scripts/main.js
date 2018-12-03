@@ -5,10 +5,10 @@ $(window).on('load',function(){
 
 var turn = -1;
 var cardsArray = [];
+var teams = [];
 
 //When the game is started
 function startGame(teamNames, teamColors) {
-    var teams = [];
     //Create a new deck and shuffle the card objects within
     const myDeck = new Deck();
     for (var i = 0; i < teamNames.length; i++){
@@ -90,7 +90,7 @@ function startGame(teamNames, teamColors) {
             $('#startTime').hide();
             $('#timeBar').show();
             var startWidth = 0;
-            var timeInMs = 50; //Set time in ms
+            var timeInMs = 60; //Set time in ms
             var id = setInterval(frame, timeInMs);
             var counter = 0;
             $('#timeBar').css("background-color", "#4CAF50");
@@ -124,8 +124,7 @@ function startGame(teamNames, teamColors) {
             extraPoints = 1;
         }
         $('#infobox').text("Tiden er gået!");
-        $('#pointContainer').append("<br>Hvor mange ord gættede I rigtigt? " + "<select id='numberOfPointsOne' class='form-control col-xs-2'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
-        //$('#timer').append("Hvor mange ord gættede modstanderen rigtigt? " + "<select id='numberOfPointsLast'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>");
+        $('#pointContainer').append("<br>Hvor mange ord gættede I rigtigt? " + "<select id='numberOfPointsOne' class='form-control'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
         $('#pointBtn').show();
         $('#pointBtn').unbind('click').click(function(){
             $('#pointBtn').hide();
@@ -167,7 +166,6 @@ function teamSettings(){
     var colorArray = ['blue', 'green', 'yellow', 'red'];  
     for(i = +1; i-1 < numberOfTeams; i++){
         $("#teamSettingsModal").append("<input type='text' id='teamName" + i + "' placeholder='Name for team " + i + "'><br>");
-        
     }
 
     $("#teamSettingsBtn").click(function(){
