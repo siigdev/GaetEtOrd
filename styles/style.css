@@ -20,18 +20,20 @@ html, body {
   display: grid;
   grid-template-areas:
 	'scorebox header header blank'
+	'infobox infobox infobox infobox'
 	'timepoint timepoint timepoint timepoint'
-    'infobox infobox infobox infobox'
     'cards cards cards cards'
     'footer footer footer footer';
   grid-gap: 10px;
-  background-color: #2196F3;
   padding: 10px;
   justify-content: space-between;
 }
-
+#startTime, #pointBtn {
+	margin: auto;
+	width: 225px;
+	display: none;
+}
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
   font-size: 30px;

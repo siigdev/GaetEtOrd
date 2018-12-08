@@ -96,7 +96,7 @@ function startGame(teamNames, teamColors) {
             $('#timeBar').css("background-color", "#4CAF50");
             function frame() {
                 counter++;
-                if (counter > timeInMs*3-70){ 
+                if ($('#timeBar').width() > '90%'){ //To be fixed
                     $('#timeBar').css("background-color", "#c6262e");
                 }
                 if (startWidth >= 100) {
