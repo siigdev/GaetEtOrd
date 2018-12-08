@@ -7,16 +7,36 @@ html, body {
 	background-color: #ededed !important;
 	font-family: 'Raleway';
 }
-#cards {
-    position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	left:0;
-	right:0;
-	margin-left:auto;
-	margin-right:auto;
-	width: 950px;
+
+.scorebox { grid-area: scorebox; width: 200px;}
+.header { grid-area: header; }
+.infobox { grid-area: infobox; }
+.timepoint { grid-area: timepoint}
+.cards { grid-area: cards; }
+.footer { grid-area: footer; }
+.blank { grid-area: blank; width: 200px;}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+	'scorebox header header blank'
+	'timepoint timepoint timepoint timepoint'
+    'infobox infobox infobox infobox'
+    'cards cards cards cards'
+    'footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+  justify-content: space-between;
 }
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
 .undefinedCards {
 	background-color: #444 !important;
 	margin: 50px 10px 50px 10px;
@@ -82,17 +102,7 @@ html, body {
 	font-size: 15px;
 	font-weight: 500px;
 }
-#infobox {
-	text-align: center;
-	font-size: 40px;
-	text-transform: uppercase;
-	font-weight: 500;
-	margin: auto;
-}
-#topcontainer {
-	text-align: center;
-	margin: auto;
-}
+
 #thingsTodo {
 	margin: 0px;
 	width: 100%;
@@ -101,11 +111,6 @@ input {
 	width: 100%;
 }
 
-#startTime, #pointBtn {
-	margin: auto;
-	width: 225px;
-	display: none;
-}
 /* On mouse-over, add a deeper shadow */
 .card:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -113,10 +118,7 @@ input {
 .disabledCards {
 	pointer-events: none;
 }
-#timeContainer {
-	width: 100%;
-	background-color: #ddd;
-  }
+
 #timeBar {
 	width: 0%;
 	height: 10px;

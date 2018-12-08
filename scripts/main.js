@@ -26,7 +26,7 @@ function startGame(teamNames, teamColors) {
     addUndefinedCard();
     addUndefinedCard();
     function addUndefinedCard(){
-        $("#cards").append("<div class='undefinedCards'></div>");
+        $(".cards").append("<div class='undefinedCards'></div>");
     }  
 
     //change teams turn function
@@ -43,35 +43,35 @@ function startGame(teamNames, teamColors) {
         let curCard = myDeck.getCard();
         cardsArray.unshift(curCard);
         let cardHtml = "<div class='card'><p id='category'>" + curCard.category + "</p><p id='method'>" + curCard.method + "</p></div>";
-        $("#cards div").removeClass("disabledCards");
-        $(cardHtml).prependTo("#cards").one("click", function() { 
+        $(".cards div").removeClass("disabledCards");
+        $(cardHtml).prependTo(".cards").one("click", function() { 
             $(this).text("");
             $(this).removeClass("card").addClass("undefinedCards");
             clickCard(cardsArray.indexOf(curCard), this); 
         });   
         if (cardsArray.length > 4){
             if (cardsArray[4] == undefined){
-                $("#cards div").slice(0,4);
+                $(".cards div").slice(0,4);
                 cardsArray.slice(0,4);
             }
             else {
-                $("#cards div").slice(0, 4).addClass("disabledCards");
+                $(".cards div").slice(0, 4).addClass("disabledCards");
             }
         }
         //Make sure only 5 cards can be on the table
-        if($('#cards').children().length > 5){
-            $("#cards div").slice(5, 7).remove();
+        if($('.cards').children().length > 5){
+            $(".cards div").slice(5, 7).remove();
         }
     }
     //Onclick-function when a card is chosen
     function clickCard(myCardIndex, el){ 
         var myCard = cardsArray[myCardIndex];
         var offset = $(el).offset();
-        $("#cards div").addClass("disabledCards");
+        $(".cards div").addClass("disabledCards");
         $('body').append("<div class='pickedCard'><div class='pickedcard__face pickedcard__face--front'><p id='category'>" + myCard.category + "</p><p id='method'>" + myCard.method + "</p></div><div class='pickedcard__face pickedcard__face--back'></div></div>");
         $(".pickedCard").offset({ top: offset.top, left: offset.left});
         $('#startTime').delay(1100).show(0);
-        $('#infobox').text("Du har valgt at " + myCard.method + " " + myCard.category);
+        $('.infobox').text("Du har valgt at " + myCard.method + " " + myCard.category);
         for(var i = 0; i < myCard.content.length; i++)
             {
                 $('.pickedcard__face--back').append("<p id='ord'>" + myCard.content[i] + "</p>");
@@ -123,8 +123,8 @@ function startGame(teamNames, teamColors) {
         if (index == 3 || index == 4){
             extraPoints = 1;
         }
-        $('#infobox').text("Tiden er gået!");
-        $('#pointContainer').append("<br>Hvor mange ord gættede I rigtigt? " + "<select id='numberOfPointsOne' class='form-control'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
+        $('.infobox').text("Tiden er gået!");
+        $('.timepoint').append("<br>Hvor mange ord gættede I rigtigt? " + "<select id='numberOfPointsOne' class='form-control'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
         $('#pointBtn').show();
         $('#pointBtn').unbind('click').click(function(){
             $('#pointBtn').hide();
@@ -140,12 +140,12 @@ function startGame(teamNames, teamColors) {
     }
     //Method for updating the results, turns and info boxes
     function updateInfoBoxes() {
-        $('#resultbox').text("");
+        $('.scorebox').text("");
         for (var i = 0; i < teams.length; i++){
-            $('#resultbox').append('Hold ' + teams[i].name + ' med  ' + teams[i].points + ' Points<br>');
+            $('.scorebox').append('Hold ' + teams[i].name + ' med  ' + teams[i].points + ' Points<br>');
         }
-        $('#turnbox').text("Det er nu hold " + this.currentTeam.name + " ");
-        $('#infobox').text("Vælg et af nedenstående kort: ");
+        $('.blank').text("Det er nu hold " + this.currentTeam.name + " ");
+        $('.header').text("Vælg et af nedenstående kort: ");
     }
 }
 
