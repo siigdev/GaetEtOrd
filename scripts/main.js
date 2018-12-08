@@ -129,13 +129,13 @@ function startGame(teamNames, teamColors) {
         $('#timeBar').hide();
         $('.infobox').prepend("<select id='numberOfPointsOne' class='form-control'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
         $('#pointBtn').show();
-
         $('#pointBtn').unbind('click').click(function(){
             $('#pointBtn').hide();
             numberOfPointsFirst = $("#numberOfPointsOne option:selected").val();
             currentTeam.points = currentTeam.points + extraPoints + parseInt($("#numberOfPointsOne option:selected").val());
             //numberOfPointsSecond = $("#numberOfPointsLast option:selected").text();
             $('.infobox').hide();
+            $('.infobox select').remove();
             $( ".pickedCard" ).remove();
             changeTeam();
             addCardToBoard();
