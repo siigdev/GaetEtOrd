@@ -11,8 +11,7 @@ html, body {
 .scorebox { grid-area: scorebox; width: 200px;}
 .header { grid-area: header; }
 .infobox { grid-area: infobox; }
-.timepoint { grid-area: timepoint}
-.cards { grid-area: cards; }
+.cards { grid-area: cards; justify-self: center}
 .footer { grid-area: footer; }
 .blank { grid-area: blank; width: 200px;}
 
@@ -21,10 +20,9 @@ html, body {
   grid-template-areas:
 	'scorebox header header blank'
 	'infobox infobox infobox infobox'
-	'timepoint timepoint timepoint timepoint'
     'cards cards cards cards'
     'footer footer footer footer';
-  grid-gap: 10px;
+  grid-gap: 0px;
   padding: 10px;
   justify-content: space-between;
 }
@@ -71,7 +69,7 @@ html, body {
 	transition: transform .2s;
 }
 .pickedCard {
-	position: absolute; 
+	position: relative; 
 	background-color: rgb(207, 206, 206) !important;
 	color: #444;
 	height: 250px;

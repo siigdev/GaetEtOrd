@@ -65,13 +65,14 @@ function startGame(teamNames, teamColors) {
     }
     //Onclick-function when a card is chosen
     function clickCard(myCardIndex, el){ 
+        $('.infobox').show();
         var myCard = cardsArray[myCardIndex];
         var offset = $(el).offset();
         $(".cards div").addClass("disabledCards");
         $('body').append("<div class='pickedCard'><div class='pickedcard__face pickedcard__face--front'><p id='category'>" + myCard.category + "</p><p id='method'>" + myCard.method + "</p></div><div class='pickedcard__face pickedcard__face--back'></div></div>");
         $(".pickedCard").offset({ top: offset.top, left: offset.left});
         $('#startTime').delay(1100).show(0);
-        $('.infobox').text("Du har valgt at " + myCard.method + " " + myCard.category);
+        $('.header').text("Du har valgt at " + myCard.method + " " + myCard.category);
         for(var i = 0; i < myCard.content.length; i++)
             {
                 $('.pickedcard__face--back').append("<p id='ord'>" + myCard.content[i] + "</p>");
@@ -123,19 +124,22 @@ function startGame(teamNames, teamColors) {
         if (index == 3 || index == 4){
             extraPoints = 1;
         }
-        $('.infobox').text("Tiden er gået!");
-        $('.timepoint').append("<br>Hvor mange ord gættede I rigtigt? " + "<select id='numberOfPointsOne' class='form-control'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
+        $('.infobox').show();
+        $('.header').text("Tiden er gået! Hvor mange ord blev gættet?");
+        $('#timeBar').hide();
+        $('.infobox').prepend("<select id='numberOfPointsOne' class='form-control'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
         $('#pointBtn').show();
+
         $('#pointBtn').unbind('click').click(function(){
             $('#pointBtn').hide();
             numberOfPointsFirst = $("#numberOfPointsOne option:selected").val();
             currentTeam.points = currentTeam.points + extraPoints + parseInt($("#numberOfPointsOne option:selected").val());
             //numberOfPointsSecond = $("#numberOfPointsLast option:selected").text();
-            $('#pointContainer').html("");
+            $('.infobox').hide();
             $( ".pickedCard" ).remove();
             changeTeam();
             addCardToBoard();
-            $('#timeBar').hide();
+            
         });
     }
     //Method for updating the results, turns and info boxes
