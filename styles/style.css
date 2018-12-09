@@ -1,5 +1,4 @@
-@media screen and (max-width: 992px) {
-	html, body {
+html, body {
 	height:100%;
 	width:100%;
 	border:0px;
@@ -8,30 +7,57 @@
 	background-color: #ededed !important;
 	font-family: 'Raleway';
 }
-}
+
 .scorebox { grid-area: scorebox; width: 200px;}
-.header { grid-area: header; }
-.infobox { grid-area: infobox;}
+.header { grid-area: header; color: green;}
+.infobox { grid-area: infobox; }
 .cards { grid-area: cards; justify-self: center;}
 .footer { grid-area: footer; }
 .blank { grid-area: blank; width: 200px;}
 
 .grid-container {
-  display: grid;
-  grid-template-areas:
-	'scorebox header header blank'
-	'infobox infobox infobox infobox'
-    'cards cards cards cards'
-    'footer footer footer footer';
-  grid-gap: 0px;
-  padding: 10px;
-  justify-content: space-between;
+	display: grid;
+	grid-template-areas:
+	  'scorebox header header blank'
+	  'infobox infobox infobox infobox'
+	  'cards cards cards cards'
+	  'footer footer footer footer';
+	grid-gap: 0px;
+	padding: 10px;
+	justify-content: space-between;
 }
+
 @media screen and (max-width: 600px) {
-	body {
-		background-color: olive;
-		color: white;
-	  }
+	.grid-container {
+		display: grid;
+		grid-template-areas:
+		  'header'
+		  'infobox'
+		  'scorebox'
+		  'cards'
+		  'blank'
+		  'footer';
+		grid-gap: 0px;
+  }
+  .header { grid-area: header; color: blue}
+  .card, .undefinedCards, .cards {
+	height: 100px;
+  }
+}
+@media screen and (max-width: 992px) {
+	.grid-container {
+		display: grid;
+		grid-template-areas:
+		'header'
+		'infobox'
+		'scorebox'
+		'cards'
+		'blank'
+		'footer';
+		grid-gap: 0px;
+		padding: 10px;
+		justify-content: space-between;
+	}
 	
 }
 #startTime, #pointBtn {
