@@ -27,23 +27,7 @@ html, body {
 	justify-content: space-between;
 }
 
-@media screen and (max-width: 600px) {
-	.grid-container {
-		display: grid;
-		grid-template-areas:
-		  'header'
-		  'infobox'
-		  'scorebox'
-		  'cards'
-		  'blank'
-		  'footer';
-		grid-gap: 0px;
-  }
-  .header { grid-area: header; color: blue}
-  .card, .undefinedCards, .cards {
-	height: 100px;
-  }
-}
+
 @media screen and (max-width: 992px) {
 	.grid-container {
 		display: grid;
@@ -57,6 +41,7 @@ html, body {
 		grid-gap: 0px;
 		padding: 10px;
 		justify-content: space-between;
+		
 	}
 	
 }
@@ -69,6 +54,7 @@ html, body {
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
+  color: green;
 }
 
 .undefinedCards {
@@ -185,4 +171,34 @@ input {
 	padding:10px;
 	font-weight: 500;
 	transform: rotateY(180deg);
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+	.grid-container {
+		display: grid;
+		grid-template-areas:
+		  'header'
+		  'infobox'
+		  'scorebox'
+		  'cards'
+		  'blank'
+		  'footer';
+		grid-gap: 0px;
+  }
+  .grid-container > div {
+	text-align: center;
+	padding: 5px 0;
+	font-size: 10px;
+	color: blue;
+  }
+  .header { grid-area: header; color: blue}
+  .card, .undefinedCards, .cards {
+	height: 200px;
+	width: 1340px;
+	margin: 5px;
+  }
 }
