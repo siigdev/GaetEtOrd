@@ -127,7 +127,7 @@ function startGame(teamNames, teamColors) {
         $('.infobox').show();
         $('.header').text("Tiden er gået! Hvor mange ord blev gættet?");
         $('#timeBar').hide();
-        $('.infobox').prepend("<select id='numberOfPointsOne' class='form-control'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
+        $('.infobox').prepend("<select id='numberOfPointsOne' class='form-control' style='width: 200px'><option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br>");
         $('#pointBtn').show();
         $('#pointBtn').unbind('click').click(function(){
             $('#pointBtn').hide();

@@ -1,4 +1,5 @@
-html, body {
+@media screen and (max-width: 992px) {
+	html, body {
 	height:100%;
 	width:100%;
 	border:0px;
@@ -7,10 +8,10 @@ html, body {
 	background-color: #ededed !important;
 	font-family: 'Raleway';
 }
-
+}
 .scorebox { grid-area: scorebox; width: 200px;}
 .header { grid-area: header; }
-.infobox { grid-area: infobox}
+.infobox { grid-area: infobox;}
 .cards { grid-area: cards; justify-self: center;}
 .footer { grid-area: footer; }
 .blank { grid-area: blank; width: 200px;}
@@ -25,6 +26,13 @@ html, body {
   grid-gap: 0px;
   padding: 10px;
   justify-content: space-between;
+}
+@media screen and (max-width: 600px) {
+	body {
+		background-color: olive;
+		color: white;
+	  }
+	
 }
 #startTime, #pointBtn {
 	margin: auto;
