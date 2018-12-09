@@ -10,8 +10,8 @@ html, body {
 
 .scorebox { grid-area: scorebox; width: 200px;}
 .header { grid-area: header; }
-.infobox { grid-area: infobox; }
-.cards { grid-area: cards; justify-self: center}
+.infobox { grid-area: infobox}
+.cards { grid-area: cards; justify-self: center;}
 .footer { grid-area: footer; }
 .blank { grid-area: blank; width: 200px;}
 

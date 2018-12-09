@@ -97,7 +97,7 @@ function startGame(teamNames, teamColors) {
             $('#timeBar').css("background-color", "#4CAF50");
             function frame() {
                 counter++;
-                if ($('#timeBar').width() > '90%'){ //To be fixed
+                if ($('#timeBar').width() > ($('#timeBar').parent().width() *0.8)){ 
                     $('#timeBar').css("background-color", "#c6262e");
                 }
                 if (startWidth >= 100) {
@@ -167,9 +167,10 @@ $(document).ready(function(){
 function teamSettings(){
     var teamNames = [];
     var teamColors = [];
-    var colorArray = ['blue', 'green', 'yellow', 'red'];  
+    var colorArray = ['blue', 'green', 'yellow', 'red']; 
     for(i = +1; i-1 < numberOfTeams; i++){
-        $("#teamSettingsModal").append("<input type='text' id='teamName" + i + "' placeholder='Name for team " + i + "'><br>");
+        $("#teamSettingsModal").append("<input type='text' id='teamName" + i + "' placeholder='Name for team " + i + " '><br>");
+        $("input").prop('required',true);
     }
 
     $("#teamSettingsBtn").click(function(){
