@@ -169,9 +169,9 @@ function teamSettings(){
     var teamColors = [];
     var colorArray = ['blue', 'green', 'yellow', 'red']; 
     for(i = +1; i-1 < numberOfTeams; i++){
-        $("#teamSettingsModal").append("<input type='text' id='teamName" + i + "' placeholder='Name for team " + i + " '><br>");
-        $("input").prop('required',true);
+        $("#teamSettingsModal").append("<input type='text' id='teamName" + i + "' placeholder='Name for team " + i + " ' required><br>");
     }
+    
 
     $("#teamSettingsBtn").click(function(){
         $('#myModal2').modal('hide');
