@@ -9,7 +9,7 @@ html, body {
 }
 
 .scorebox { grid-area: scorebox; width: 200px;}
-.header { grid-area: header; color: green;}
+.header { grid-area: header; font-size: 30px}
 .infobox { grid-area: infobox; }
 .cards { grid-area: cards; justify-self: center;}
 .footer { grid-area: footer; }
@@ -23,7 +23,7 @@ html, body {
 	  'cards cards cards cards'
 	  'footer footer footer footer';
 	grid-gap: 0px;
-	padding: 10px;
+	padding: 0px;
 	justify-content: space-between;
 }
 
@@ -52,9 +52,7 @@ html, body {
 }
 .grid-container > div {
   text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-  color: green;
+  padding: 5px 0;
 }
 
 .undefinedCards {
@@ -191,10 +189,9 @@ input {
   }
   .grid-container > div {
 	text-align: center;
-	padding: 5px 0;
-	font-size: 10px;
+	padding: 5px 0;	
   }
-  .header { grid-area: header;}
+  .header { grid-area: header; font-size: 20px}
   .card, .undefinedCards, .cards {
 	height: 200px;
 	width: 1340px;
